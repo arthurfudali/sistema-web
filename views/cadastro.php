@@ -14,13 +14,12 @@
        
          
             <?php  $query = mysqli_query($conexao, "SELECT usuario_codigo, usuario_nome from posts INNER JOIN bloginfo ON blog_bloginfo_codigo = bloginfo_codigo  INNER JOIN usuario ON blog_usuario_codigo = usuario_codigo;");
-            $result = mysqli_query($query);
             ?>
-            
+            <select name="blogUsuario" id="">
             <?php 
-                while ($row = mysqli_fetch_array($result))
+                while ($row = mysqli_fetch_array($query))
                 {
-                    echo "<option value='".$row['path']."'>'".$row['name']."'</option>";
+                    echo "<option value='" . $row['<?PHP echo $exibe [1] ?>'] ."'>" . $row['<?PHP echo $exibe[2] ?>'] ."</option>";
                 }
             ?> 
             </select>
