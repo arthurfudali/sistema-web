@@ -1,4 +1,5 @@
 <?php include("blades/header.php"); ?>
+<?php include("../models/conexao.php"); ?>
 <div class="container bg-white pt-2 mt-5 p-3 rounded-2 shadow">
 <form action="../controllers/cadastrar.php" method="post">
 <h3 class="p-3" > Cadastrar</h3>
@@ -10,15 +11,31 @@
     <label class="form-date" >Data</label> <br>
     <input type="date" name="blogData"> <br>
     <label for="usuario">Selecione um usuario</label>
-        <select name="cars" id="cars" name="blogUsuario">
-            <?PHP
-            $query =  mysqli_query($conexao, "SELECT count(*) as usuarios from usuario") ;
-            for ($k = 0; $k < $query; $k++) {
+       
+         
+            <?php  $query = mysqli_query($conexao, "SELECT usuario_codigo, usuario_nome from posts INNER JOIN bloginfo ON blog_bloginfo_codigo = bloginfo_codigo  INNER JOIN usuario ON blog_usuario_codigo = usuario_codigo;");
+            $result = mysqli_query($query);
             ?>
-            <?php $query = mysqli_query($conexao, "SELECT * from posts INNER JOIN bloginfo ON blog_bloginfo_codigo = bloginfo_codigo INNER JOIN imagens on blog_blogimgs_codigo = id_imagem INNER JOIN usuario ON blog_usuario_codigo = usuario_codigo group by blog_bloginfo_codigo;")?>
-            <option value="usuario<?php echo $exibe[11]?>"><?PHP echo $exibe[12] ?></option>
-            <?php }?>
-        </select>
+            
+            <?php 
+                while ($row = mysqli_fetch_array($result))
+                {
+                    echo "<option value='".$row['path']."'>'".$row['name']."'</option>";
+                }
+            ?> 
+            </select>
+       <!--      <option value="usuario<?php echo $exibe[11]?>"><?PHP echo $exibe[12] ?></option> 
+            $query = mysqli_query($conexao, "SELECT usuario_codigo, usuario_nome from posts INNER JOIN bloginfo ON blog_bloginfo_codigo = bloginfo_codigo  INNER JOIN usuario ON blog_usuario_codigo = usuario_codigo;");
+            $result = mysql_query($query);
+            ?>
+            <select name="blogUsuarios" id="">
+            <?php 
+                /* while ($row = mysql_fetch_array($result))
+                {
+                    echo "<option value='".$row['path']."'>'".$row['name']."'</option>";
+                } */
+            ?> 
+            </select> -->
             <br>
      <!-- Se tirar enctype ele para de funcionar, ele mostra o tipo de form -->
      <form name="upload" enctype="multipart/form-data" method="post" action="../controllers/upload.php">
