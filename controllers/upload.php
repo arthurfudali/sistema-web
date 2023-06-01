@@ -1,14 +1,7 @@
 <?php
-
 include("../models/conexao.php");
 
 $diretorio = "imgs/";
-
-
-/* Implementações (pathinfo)(md5()) (uniqid):
- -  Apenas arquivos png;
- -  Na hora que fizer o upload vai renomear o arquivo para um nome aleatório, mas no banco de dados fica salvo o nome antigo e o novo nome.
- */
 
 /* Operador ternário */
 $arquivo = isset($_FILES['arquivo']) ? $_FILES['arquivo'] : FALSE;

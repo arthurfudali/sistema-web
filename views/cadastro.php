@@ -13,38 +13,27 @@
     <label for="usuario">Selecione um usuario</label>
        
          
-            <?php  $query = mysqli_query($conexao, "SELECT usuario_codigo, usuario_nome from posts INNER JOIN bloginfo ON blog_bloginfo_codigo = bloginfo_codigo  INNER JOIN usuario ON blog_usuario_codigo = usuario_codigo;");
+            <?php  /* $query = mysqli_query($conexao, "SELECT usuario_codigo, usuario_nome from posts INNER JOIN bloginfo ON blog_bloginfo_codigo = bloginfo_codigo  INNER JOIN usuario ON blog_usuario_codigo = usuario_codigo ORDER BY usuario_codigo; "); */
+            $query = mysqli_query($conexao, "SELECT usuario_codigo, usuario_nome FROM usuario ORDER BY usuario_codigo;")
             ?>
             <select name="blogUsuario" id="">
             <?php 
                 while ($row = mysqli_fetch_array($query))
                 {
-                    echo "<option value='" . $row['<?PHP echo $exibe [1] ?>'] ."'>" . $row['<?PHP echo $exibe[2] ?>'] ."</option>";
+                    echo "<option value='" . $row['usuario_codigo'] ."'>" . $row['usuario_nome'] ."</option>";
                 }
             ?> 
             </select>
-       <!--      <option value="usuario<?php echo $exibe[11]?>"><?PHP echo $exibe[12] ?></option> 
-            $query = mysqli_query($conexao, "SELECT usuario_codigo, usuario_nome from posts INNER JOIN bloginfo ON blog_bloginfo_codigo = bloginfo_codigo  INNER JOIN usuario ON blog_usuario_codigo = usuario_codigo;");
-            $result = mysql_query($query);
-            ?>
-            <select name="blogUsuarios" id="">
-            <?php 
-                /* while ($row = mysql_fetch_array($result))
-                {
-                    echo "<option value='".$row['path']."'>'".$row['name']."'</option>";
-                } */
-            ?> 
-            </select> -->
-            <br>
+            
      <!-- Se tirar enctype ele para de funcionar, ele mostra o tipo de form -->
      <form name="upload" enctype="multipart/form-data" method="post" action="../controllers/upload.php">
         <input type="hidden" name="MAX_FILE_SIZE" value="99999999">
         <input type="file" name="arquivo[]" multiple="multiple"/>
-        <input name="enviar" type="submit" value="Enviar">
+        <input class="btn btn-success mt-3 ms-1" name="enviar" type="submit" value="Enviar">
     </form>
 
-    <input class="btn btn-success mt-3 ms-1" type="submit" value="Cadastrar">
-
+<!--     <input class="btn btn-success mt-3 ms-1" type="submit" value="Cadastrar">
+ -->
 </form>
 </div>
 <?php include("blades/footer.php"); ?>
