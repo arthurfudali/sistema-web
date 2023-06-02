@@ -26,7 +26,7 @@
             </select>
             
      <!-- Se tirar enctype ele para de funcionar, ele mostra o tipo de form -->
-     <form name="upload" enctype="multipart/form-data" method="post" action="../controllers/upload.php">
+     <form name="upload" enctype="multipart/form-data" ction="../controllers/upload.php" method="post">
         <input type="hidden" name="MAX_FILE_SIZE" value="99999999">
         <input type="file" name="arquivo[]" multiple="multiple"/>
         <input class="btn btn-success mt-3 ms-1" name="enviar" type="submit" value="Enviar">
