@@ -1,7 +1,7 @@
 <?php
 include("../models/conexao.php");
 
-$diretorio = "imgs/";
+$diretorio = "../views/imgs/";
 
 /* Operador ternário */
 $arquivo = isset($_FILES['arquivo']) ? $_FILES['arquivo'] : FALSE;
@@ -29,6 +29,7 @@ for ($k = 0; $k < count($arquivo['name']); $k++) {
 		} else {
 			echo "Falha ao enviar o arquivo";
 		}
+		mysqli_query($conexao, "INSERT INTO posts (blog_bloginfo_codigo, blog_blogimgs_codigo, blog_usuario_codigo) VALUES ('$idblog', '$idimg', '$iduser')");
 	} else {
 		echo "Arquivo não é compatível com o tipo 'PNG'";
 	}
