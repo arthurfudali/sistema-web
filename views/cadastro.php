@@ -17,7 +17,6 @@ include("../models/conexao.php"); ?>
     <label for="usuario">Selecione um usuario</label>     
     <?php  
     $query = mysqli_query($conexao, "SELECT * FROM usuario ORDER BY usuario_codigo;");
-/*     $iduser = mysqli_query($conexao, "SELECT LAST_INSERT_ID();"); */
     ?>
     <select name="blogUsuario" id="">
         <?php 
