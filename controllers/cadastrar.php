@@ -35,8 +35,8 @@ for ($k = 0; $k < count($arquivo['name']); $k++) {
 	} else {
 		echo "Arquivo não é compatível com o tipo 'PNG'";
 	}
-/*     mysqli_query($conexao, "INSERT INTO posts (blog_bloginfo_codigo, blog_blogimgs_codigo, blog_usuario_codigo) VALUES ('$idblog', '$idimg', '$varUsuario')");
- */}
+    mysqli_query($conexao, "INSERT INTO posts (blog_bloginfo_codigo, blog_blogimgs_codigo, blog_usuario_codigo) VALUES ('$idblog', '$idimg', '$varUsuario')");
+}
 header("location:../index.php"); //te manda pra index novamente
 
 ?>
