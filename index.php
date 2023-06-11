@@ -1,7 +1,6 @@
 <?php include("models/conexao.php") ?>
 <?php include("views/blades/header.php"); ?>
 <div class="container bg-white pt-2 mt-5 p-3 rounded-2 shadow">
-    <!-- 'p-3' é o padding geral do container, evitando ter que declarar o padding de cada lado (bottom, top, start e end), valeu igor filho da puta por ensinar.-->
     <p class="h3">Blog</p>
     <a class="btn btn-success" href="views/cadastro.php">cadastrar</a>
 
@@ -33,11 +32,7 @@ ed table-hover mt-3" width="500px">
                 </td>
                 <td><a class="btn btn-danger " href="controllers/deletar.php?bloginfo_codigo=<?php echo $exibe[0] ?>">Excluir</a>
                 </td>
-            </tr>
-
-<!-- instert into tabela where codigo = last_id() -->
-               
- 
+            </tr>               
             <?php } ?>
         </table>
     <?php  ?>

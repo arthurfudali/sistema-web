@@ -1,11 +1,13 @@
 <?php
 include("../models/conexao.php");
-$varAlunoCodigo = $_POST["alunoCodigo"];
-$varAlunoNome = $_POST["alunoNome"];
-$varAlunoCidade = $_POST["alunoCidade"];
-$varAlunoSexo = $_POST["alunoSexo"];
+$diretorio = "../views/imgs/";
+$varTitulo = $_POST["blogTitulo"];
+$varCorpo = $_POST["blogCorpo"];
+$varData = $_POST["blogData"];
+$varUsuario = $_POST["blogUsuario"];
+$blogCodigo = $_POST["blogcodigo"];
 
-mysqli_query($conexao, "UPDATE alunos set  nome = '$varAlunoNome', cidade = '$varAlunoCidade', sexo = '$varAlunoCidade' where codigo = '$varAlunoCodigo';");
+mysqli_query($conexao, "UPDATE bloginfo set bloginfo_titulo = '$varTitulo', bloginfo_corpo = '$varCorpo', bloginfo_data = '$varData' where bloginfo_codigo = '$blogCodigo';");
 
 header("location:../")
     ?>

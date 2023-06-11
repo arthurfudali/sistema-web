@@ -1,5 +1,5 @@
 <?php
-include("conexao.php");
+include("../models/conexao.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,25 +21,27 @@ include("conexao.php");
             $varblogCodigo = $_GET["blog_codigo"];
 
             $query = mysqli_query($conexao, "SELECT * from posts INNER JOIN bloginfo ON blog_bloginfo_codigo = bloginfo_codigo 
-            INNER JOIN blogimgs on blog_blogimgs_codigo = blogimgs_codigo 
+            INNER JOIN imagens on blog_blogimgs_codigo = id_imagem 
             INNER JOIN usuario ON blog_usuario_codigo = usuario_codigo 
-            where blog_codigo = $varblogCodigo");
+            where blog_codigo = $varblogCodigo;");
 
             while ($exibe = mysqli_fetch_array($query)) {
                 ?>
                 <tr>
-                    <td><img src="imgs/<?php echo $exibe[9] ?>" width="200px" alt=""></td>
+                    <td><img src="imgs/<?php echo $exibe[10] ?>" width="200px" alt=""></td>
                     <td>
                         <h3>
-                            <?php echo $exibe[7] ?>
+                            <?php echo $exibe[5] ?>
                         </h3>
                         Criada por <b>
-                            <?php echo $exibe[11] ?>
+                            <?php echo $exibe[12] ?>
                         </b> em
-                        <?php echo $exibe[6] ?>
+                        <?php echo $exibe[7] ?>
                         <hr>
 
-                        <?php echo ($exibe[5]) . "..." ?>
+                        
+
+                        <?php echo ($exibe[6])?>
                     </td>
                 </tr>
                 <tr>
