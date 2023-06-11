@@ -38,9 +38,6 @@ include("../models/conexao.php")
                         </b> em
                         <?php echo $exibe[7] ?>
                         <hr>
-
-                        
-
                         <?php echo ($exibe[6])?>
                     </td>
                 </tr>

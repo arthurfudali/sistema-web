@@ -5,8 +5,7 @@
     <a class="btn btn-success" href="views/cadastro.php">cadastrar</a>
 
         
-        <table class="table table-bordered table-strip
-ed table-hover mt-3" width="500px">
+        <table class="table table-bordered table-striped table-hover mt-3" width="500px">
             <tr>
                 <td>Imagens</td>
                 <td>Noticia</td>
@@ -23,14 +22,16 @@ ed table-hover mt-3" width="500px">
                 <td>
                     <a class="link-underline-opacity-0" href="views/page.php?blog_codigo=<?php echo $exibe[0] ?>">
                     <h3 class="title" ><?php echo $exibe[5] ?></h3>
-                    Criada por <b><?php echo $exibe[13] ?></b> em <?php echo $exibe[7] ?>
+                    Criada por <b><?php echo $exibe[12] ?></b> em <?php echo $exibe[7] ?>
                     <hr>
                     <?php  echo substr($exibe[6],0,250)."..."  ?> 
                 </a>
                 </td>
                 <td><a class="btn btn-primary" href="views/cadastroAtualiza.php?bloginfo_codigo=<?php echo $exibe[0] ?>">Editar</a>
                 </td>
-                <td><a class="btn btn-danger " href="controllers/deletar.php?bloginfo_codigo=<?php echo $exibe[0] ?>">Excluir</a>
+                <td>
+                <input type="text" name="excluir_imagem" value="<?php echo $exibe[10];?>">     
+                <a class="btn btn-danger" name="deletar_imagem" href="controllers/deletar.php?bloginfo_codigo=<?php echo $exibe[0]; ?>">Excluir</a>
                 </td>
             </tr>               
             <?php } ?>
