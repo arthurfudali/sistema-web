@@ -30,7 +30,7 @@
                 <td><a class="btn btn-primary" href="views/cadastroAtualiza.php?bloginfo_codigo=<?php echo $exibe[0] ?>">Editar</a>
                 </td>
                 <td>
-                <input type="text" name="excluir_imagem" value="<?php echo $exibe[10];?>">     
+                <input type="hidden" name="excluir_imagem" value="<?php echo $exibe[10];?>">     
                 <a class="btn btn-danger" name="deletar_imagem" href="controllers/deletar.php?bloginfo_codigo=<?php echo $exibe[0]; ?>">Excluir</a>
                 </td>
             </tr>               
