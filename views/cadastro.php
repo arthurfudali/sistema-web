@@ -9,7 +9,7 @@ include("../models/conexao.php"); ?>
     <input class="form-control" type="text" name="blogTitulo"> <br>
 
     <label class="form-label">Conteúdo</label>
-    <input class="form-control"type="text" name="blogCorpo"> <br>
+    <textarea name="blogCorpo" class="form-control" cols="30" rows="10"></textarea>
 
     <label class="form-date" >Data</label> <br>
     <input type="date" name="blogData"> <br>

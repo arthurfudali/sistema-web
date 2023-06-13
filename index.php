@@ -2,7 +2,8 @@
 <?php include("views/blades/header.php"); ?>
 <div class="container bg-white pt-2 mt-5 p-3 rounded-2 shadow">
     <p class="h3">Blog</p>
-    <a class="btn btn-success" href="views/cadastro.php">cadastrar</a>
+    <a class="btn btn-success" href="views/cadastro.php">Cadastrar</a>
+    <a class="btn btn-success" href="views/cadastroUser.php">Criar usuário</a>
 
         
         <table class="table table-bordered table-striped table-hover mt-3" width="500px">

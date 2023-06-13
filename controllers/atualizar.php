@@ -11,5 +11,5 @@ $result = mysqli_fetch_array($query);
 $varBlogInfoCodigo = $result['bloginfo_codigo'];
 mysqli_query($conexao, "UPDATE bloginfo set bloginfo_titulo = '$varTitulo', bloginfo_corpo = '$varCorpo', bloginfo_data = '$varData' where bloginfo_codigo = '$varBlogInfoCodigo';");
 
-/* header("location:../") */
+header("location:../")
     ?>

@@ -6,7 +6,7 @@
 $varIdPost = $_GET["bloginfo_codigo"];
 
 
-$query = mysqli_query($conexao, "SELECT * from posts INNER JOIN bloginfo ON blog_bloginfo_codigo = bloginfo_codigo INNER JOIN imagens on blog_blogimgs_codigo = id_imagem INNER JOIN usuario ON blog_usuario_codigo = usuario_codigo group by blog_bloginfo_codigo");
+$query = mysqli_query($conexao, "SELECT * from posts INNER JOIN bloginfo ON blog_bloginfo_codigo = bloginfo_codigo INNER JOIN imagens on blog_blogimgs_codigo = id_imagem INNER JOIN usuario ON blog_usuario_codigo = usuario_codigo where blog_codigo ='$varIdPost'"); 
 
 while ($exibe = mysqli_fetch_array($query)) {
 ?>
@@ -14,9 +14,9 @@ while ($exibe = mysqli_fetch_array($query)) {
     <form action="../controllers/atualizar.php?blogCodigo=<?php echo $exibe[1]?>" method="post">
       
         <label class="form-label">Título Da Noticia</label>
-        <input class="form-control" type="text" name="blogTitulo"> <br>
+        <input class="form-control" type="text" name="blogTitulo" placeholder="<?php echo $exibe[5]?>"> <br>
         <label class="form-label">Conteúdo</label>
-        <input class="form-control"type="text" name="blogCorpo"> <br>
+        <textarea name="blogCorpo" class="form-control" placeholder="<?php echo $exibe[6]?>" cols="30" rows="10"></textarea>
         <label class="form-date" >Data</label> <br>
         <input type="date" name="blogData"> <br>
         <label for="usuario">Selecione um usuario</label>
