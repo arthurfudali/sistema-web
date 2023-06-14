@@ -14,9 +14,9 @@ while ($exibe = mysqli_fetch_array($query)) {
     <form action="../controllers/atualizar.php?blogCodigo=<?php echo $exibe[1]?>" method="post">
       
         <label class="form-label">Título Da Noticia</label>
-        <input class="form-control" type="text" name="blogTitulo" placeholder="<?php echo $exibe[5]?>"> <br>
+        <input class="form-control" type="text" name="blogTitulo" value="<?php echo $exibe[5]?>"> <br>
         <label class="form-label">Conteúdo</label>
-        <textarea name="blogCorpo" class="form-control" placeholder="<?php echo $exibe[6]?>" cols="30" rows="10"></textarea>
+        <textarea name="blogCorpo" class="form-control" cols="30" rows="10"><?php echo $exibe[6]?></textarea>
         <label class="form-date" >Data</label> <br>
         <input type="date" name="blogData"> <br>
         <label for="usuario">Selecione um usuario</label>
