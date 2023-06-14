@@ -1,9 +1,9 @@
 <?php include("models/conexao.php") ?>
 <?php include("views/blades/header.php"); ?>
-<div class="container bg-white pt-2 mt-5 p-3 rounded-2 shadow">
+<div class="container pt-2 mt-5 p-3 rounded-2 shadow" style="background-color: #C4D7E0">
     <p class="h3">Blog</p>
-    <a class="btn btn-success" href="views/cadastro.php">Cadastrar</a>
-    <a class="btn btn-success" href="views/cadastroUser.php">Criar usuário</a>
+    <a class="btn m-3" style="background-color: #C4D7E0" id="btn" href="views/cadastro.php">Cadastrar</a>
+    <a class="btn m-3" style="background-color: #C4D7E0" id="btn" href="views/cadastroUser.php">Criar usuário</a>
 
         
         <table class="table table-bordered table-striped table-hover mt-3" width="500px">
