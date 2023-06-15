@@ -2,8 +2,8 @@
 <?php include("views/blades/header.php"); ?>
 <div class="container pt-2 mt-5 p-3 rounded-2 shadow" style="background-color: #C4D7E0">
     <p class="h3">Blog</p>
-    <a class="btn m-3" style="background-color: #C4D7E0" id="btn" href="views/cadastro.php">Cadastrar</a>
-    <a class="btn m-3" style="background-color: #C4D7E0" id="btn" href="views/cadastroUser.php">Criar usuário</a>
+    <a class="btn m-3" style="background-color: #C4D7E0" id="btn" href="views/cadastro.php">Criar Post</a>
+    <a class="btn m-3" style="background-color: #C4D7E0" id="btn" href="views/cadastroUser.php">Cadastrar Usuário</a>
     <a class="btn m-3" style="background-color: #C4D7E0" id="btn" href="controllers/logoff.php">Sair</a>
 
         
