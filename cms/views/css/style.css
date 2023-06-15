@@ -1,4 +1,13 @@
 /* https://colorhunt.co/palette/6e85b7b2c8dfc4d7e0f8f9d7 */
+@import url(https://fonts.google.com/specimen/Poppins);
 .bgbody{
     background-color: #6E85B7;
+}
+#main{
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFF  ;
+}
+a{
+    text-decoration: none;
+    color: #6E85B7;
 }
