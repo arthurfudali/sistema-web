@@ -6,4 +6,8 @@ $banco = "uploadarquivos";
 $conexao =  mysqli_connect($servidor, $usuario, $senha);
             mysqli_select_db($conexao, $banco);
             mysqli_set_charset($conexao, "UTF8");
+/*  if ($conexao) {
+     echo "conectado";
+ } else {
+     echo "erro"; } */
 ?>

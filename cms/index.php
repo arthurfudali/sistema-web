@@ -37,7 +37,5 @@
             </tr>               
             <?php } ?>
         </table>
-    <?php  ?>
-
 </div>
 <?php include("views/blades/footer.php"); ?>
