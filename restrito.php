@@ -1,8 +1,6 @@
 <?php
 session_start();
-if ($_SESSION["fatec"]==1) {
-
-/* echo "Bem-vindo, ".$_SESSION["professor"]."!<hr><a href='logoff.php'>Sair</a>"; */
+if ($_SESSION["admin"]==1) {
 header("location:cms/index.php");
 				
 } else {
