@@ -9,5 +9,56 @@
 }
 a{
     text-decoration: none;
-    color: #6E85B7;
 }
+button {
+    font-size: 16px;
+    position: relative;
+    margin: auto;
+    padding: 0.5em 2.5em 0.5em 2.5em;
+    border: none;
+    background: #C4D7E0;
+    transition: all 0.1s linear;
+    box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.1);
+   }
+   
+   .buttonsair {
+    font-size: 16px;
+    position: relative;
+    margin: auto;
+    padding: 0.5em 2.5em 0.5em 2.5em;
+    border: none;
+    background: 
+    #F8F9D7;
+    transition: all 0.1s linear;
+    box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.1);
+   }
+   button:active {
+    transform: scale(0.95);
+   }
+   
+   button span {
+    color: #000000;
+   }
+   
+   button .border {
+    position: absolute;
+    border: 0.13em solid 
+    #F8F9D7;
+    transition: all 0.3s 0.08s linear;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 2.5em;
+    transform: translate(-50%, -50%);
+   }
+   
+   button:hover .border {
+    display: block;
+    width: 110%;
+    height: 3em;
+   }
+   
+   .full-rounded {
+    border-radius: 2em;
+   }
+   

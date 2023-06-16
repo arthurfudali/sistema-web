@@ -3,10 +3,25 @@
 <link rel="stylesheet" href="views/css/style.css">
 <div class="container pt-2 mt-5 p-3 rounded-2 shadow" id="main">
     <p class="h3">Blog</p>
-    <div>
-    <a class="btn m-2 col-2" style="background-color: #C4D7E0" id="btn" href="views/cadastro.php">Criar Post</a>
-    <a class="btn m-3 col-2" style="background-color: #C4D7E0" id="btn" href="views/cadastroUser.php">Cadastrar Usuário</a>
-    <a class="btn m-3 " style="background-color: #C4D7E0" id="btn" href="controllers/logoff.php">Sair</a>
+    <div class="row">
+    <a class="m-3 col-2" id="btn" href="views/cadastro.php">
+        <button class="full-rounded">
+            <span>Criar Post</span>
+            <div class="border full-rounded"></div>
+        </button>
+    </a> 
+    <a class="m-3 col-3"id="btn" href="views/cadastroUser.php">
+        <button class="full-rounded">
+            <span>Cadastrar Usuário</span>
+            <div class="border full-rounded"></div>
+        </button>
+    </a>
+    <a class="m-3 col-6 "id="btn" href="controllers/logoff.php">
+        <button class="full-rounded buttonsair">
+            <span>Sair</span>
+            <div class="border full-rounded"></div>
+        </button>
+    </a>
     </div>
         <table class="table table-bordered table-striped table-hover mt-3" id="table" width="500px">
             <tr>
@@ -30,11 +45,11 @@
                     <?php  echo substr($exibe[6],0,250)."..."  ?> 
                 </a>
                 </td>
-                <td><a class="btn btn-primary" href="views/cadastroAtualiza.php?bloginfo_codigo=<?php echo $exibe[0] ?>">Editar</a>
+                <td><a class="btn" href="views/cadastroAtualiza.php?bloginfo_codigo=<?php echo $exibe[0] ?>">Editar</a>
                 </td>
                 <td>
                 <input type="hidden" name="excluir_imagem" value="<?php echo $exibe[10];?>">     
-                <a class="btn btn-danger" name="deletar_imagem" href="controllers/deletar.php?bloginfo_codigo=<?php echo $exibe[0]; ?>">Excluir</a>
+                <a class="btn" name="deletar_imagem" href="controllers/deletar.php?bloginfo_codigo=<?php echo $exibe[0]; ?>">Excluir</a>
                 </td>
             </tr>               
             <?php } ?>
