@@ -14,21 +14,9 @@ include("../models/conexao.php"); ?>
     <label class="form-date" >Data</label> <br>
     <input type="date" name="blogData"> <br>
 
-    <label for="usuario">Selecione um usuario</label>     
-    <?php  
-    $query = mysqli_query($conexao, "SELECT * FROM usuario ORDER BY usuario_codigo;");
-    ?>
-    <select name="blogUsuario" id="">
-        <?php 
-            while ($row = mysqli_fetch_array($query))
-            {
-                    echo "<option value='" . $row['usuario_codigo'] ."'>" . $row['usuario_nome'] ."</option>";
-            }
-        ?> 
-    </select>
-    
-    <br>
+    <label for="usuario">Selecione um usuario</label>
 
+    <br>
      <!-- Se tirar enctype ele para de funcionar, ele mostra o tipo de form -->
     <input type="hidden" name="MAX_FILE_SIZE" value="99999999">
     <input type="file" name="arquivo[]" multiple="multiple"/>

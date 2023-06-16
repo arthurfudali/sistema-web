@@ -1,5 +1,10 @@
 <?php include("models/conexao.php") ?>
-<?php include("views/blades/header.php"); ?>
+<?php include("views/blades/header.php");
+session_start();
+if(empty($_SESSION)){
+    print "<script>location.href='../index.php';</script>";
+}
+?>
 <link rel="stylesheet" href="views/css/style.css">
 <div class="container pt-2 mt-5 p-3 rounded-2 shadow" id="main">
     <p class="h3">Blog</p>
