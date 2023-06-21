@@ -1,4 +1,78 @@
 /* https://colorhunt.co/palette/6e85b7b2c8dfc4d7e0f8f9d7 */
+@import url(https://fonts.google.com/specimen/Poppins);
 .bgbody{
-    background-color: #6E85B7;
+    background-color: #C4D7B2;
 }
+#main{
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFF  ;
+}
+a{
+    text-decoration: none;
+    color: #658864;
+}
+h3{
+    font-family: 'Poppins', sans-serif; 
+    color: #658864;
+}
+button {
+    font-size: 16px;
+    position: relative;
+    margin: auto;
+    padding: 0.5em 2.5em 0.5em 2.5em;
+    border: none;
+    background: #9DC08B;
+    transition: all 0.1s linear;
+    box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.1);
+   }
+   
+   .buttonsair {
+    font-size: 16px;
+    position: relative;
+    margin-left: 550px;
+    padding: 0.5em 2.5em 0.5em 2.5em;
+    border: none;
+    background: #6eaf94;
+    transition: all 0.1s linear;
+    box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.1);
+   }
+   button:active {
+    transform: scale(0.95);
+   }
+   
+   button span {
+    color: #000000;
+   }
+   
+   button .border {
+    position: absolute;
+    border: 0.13em solid 
+    #F8F9D7;
+    transition: all 0.3s 0.08s linear;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 2.5em;
+    transform: translate(-50%, -50%);
+   }
+   
+   button:hover .border {
+    display: block;
+    width: 110%;
+    height: 3em;
+   }
+   
+   .full-rounded {
+    border-radius: 2em;
+   }
+
+   .textb {
+
+    color: #f8f8f8;
+   }
+
+   .tt {
+    color: #426141;
+    
+   }
+   
