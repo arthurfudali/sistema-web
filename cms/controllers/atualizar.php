@@ -4,10 +4,9 @@ $diretorio = "../views/imgs/";
 $varTitulo = $_POST["blogTitulo"];
 $varCorpo = $_POST["blogCorpo"];
 $varData = $_POST["blogData"];
-/* $varUsuario = $_POST["blogUsuario"]; */
 $varImagem = $_POST["fk_codigoImagem"];
 
-$arquivos = isset($_FILES['arquivo']) ? $_FILES['arquivo'] : FALSE;
+$arquivo = isset($_FILES['arquivo']) ? $_FILES['arquivo'] : FALSE;
 
 $query = mysqli_query($conexao, "SELECT * from posts INNER JOIN bloginfo ON blog_bloginfo_codigo = bloginfo_codigo group by blog_bloginfo_codigo");
 $result = mysqli_fetch_array($query);
@@ -21,10 +20,15 @@ while ($exibe = mysqli_fetch_array($query)) {
     $codigosImg[] = $exibe[0];
 }
 
-if (!empty($blogImagemRandom) && file_exists($diretorio . "/" . $blogImagemRandom)) 
-{
-    unlink($diretorio . "/" . $nomeImagemRandom);
-}
+if ($arquivo !== false && !empty($arquivo['name'][0])) {
+	foreach($codigosImg as $codigoImagem)
+	{
+		mysqli_query($conexao, "SELECT * FROM imagens WHERE id_imagem = $codigoImagem");
+		if (!empty($blogImagemRandom) && file_exists($diretorio . "/" . $blogImagemRandom)) 
+		{
+			unlink($diretorio . "/" . $nomeImagemRandom);
+		}
+	}
 for ($k = 0; $k < count($arquivo['name']); $k++) {
 	$destino = $diretorio . "/" . $arquivo['name'][$k];
 	$extension = pathinfo($destino, PATHINFO_EXTENSION);
@@ -46,5 +50,6 @@ for ($k = 0; $k < count($arquivo['name']); $k++) {
 	}
 
 }
-/* header("location:../") */
+}
+header("location:../")
     ?>
